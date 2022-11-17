@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+
+    <title>Maayah</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0px;
+      background: linear-gradient(45deg,#ff6600,#e6ff01,#16eefd,#e6ff01);
+      
+    }
+
+    header {
+      padding: 30px 20px;
+      position: sticky;
+      top: 0;
+      width: 100%;
+    }
+    .main-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    ul {
+      display: flex;
+      list-style: none;
+    }
+    nav li {
+      padding: 5px 10px;
+      border: none;
+      display: inline-block;
+      padding: 5px;
+      transition: all linear 0.5s;
+      margin-right: 20px;
+    }
+    nav li a {
+      text-decoration: none;
+      display: inline-block;
+      margin-left: 100px;
+    }
+    section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      width: 100%;
+    }
+    section h1 {
+      font-size: 4rem;
+      font-weight: bold;
+      opacity: 0.8;
+      color: #fff;
+      text-shadow: 5px 10px 5px;
+    }
+    #main {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    #box1 {
+      width: 530px;
+      height: 625px;
+      border-top-left-radius: 30px;
+      border-top-right-radius: 300px;
+      background-image: url("assets/images/ash22.png");
+      position: absolute;
+      bottom: -100%;
+      left: 30%;
+      animation: anim 2s forwards, anim2 3s forwards 3s;
+    }
+    #box1::after {
+      content: "";
+      position: absolute;
+      width: 530px;
+      height: 625px;
+      border-top-left-radius: 300px;
+      border-top-right-radius: 300px;
+      object-position: 100% 100%;
+      background-image: url("assets/images/ash11.png");
+      left: 0px;
+      z-index: -1;
+    }
+    @keyframes anim {
+      from {
+        bottom: -100%;
+      }
+      to {
+        bottom: 0%;
+      }
+    }
+    @keyframes anim2 {
+      from {
+        left: 30%;
+        width: 530px;
+      }
+      to {
+        width: 0px;
+        left: 50%;
+      }
+    }
+
+    #box2 {
+      width: auto;
+      height: auto;
+      /* font-family:  `Bahnschrif Condensed`; */
+      font-family: "Bahnschrif Condensed";
+      color: white;
+      font-size: 6em;
+      font-weight: 500;
+      line-height: 150px;
+      position: absolute;
+      top: 15px;
+      left: 150px;
+      overflow: hidden;
+    }
+    #text {
+      position: relative;
+      left: -100%;
+      animation: anim3 2s forwards 3s;
+    }
+    @keyframes anim3 {
+      from {
+        left: -100%;
+      }
+      to {
+        left: 0%;
+      }
+    }
+    #box4 {
+      width: auto;
+      height: auto;
+      /* font-family:  `Bahnschrif Condensed`; */
+      font-family: "Bahnschrif Condensed";
+      color: white;
+      font-size: 3em;
+      font-weight: 500;
+      line-height: 50px;
+      position: absolute;
+      top: 150px;
+      left: 150px;
+      overflow: hidden;
+    }
+    #text2 {
+      position: relative;
+      left: -100%;
+      animation: anim3 2s forwards 3s;
+    }
+    @keyframes anim3 {
+      from {
+        left: -100%;
+      }
+      to {
+        left: 0%;
+      }
+    }
+    #projects {
+      background-image: url(assets/images/junior.jp);
+      background-size: cover;
+      background-position: center center;
+    }
+    #projects p{
+      background: url(http://localhost:4200/#projects);
+    }
+    #about {
+      background-image: url(assets/images/code1.jp);
+      background-size: cover;
+      background-position: center center;
+    }
+    #contact {
+      background-image: url(assets/images/contact1.jp);
+      background-size: cover;
+      background-position: center center;
+    }
+    .container-card {
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+      max-width: 1200px;
+      flex-wrap: wrap;
+      padding: 40px 0;
+    }
+    .container-card .card {
+      position: relative;
+      min-width: 320px;
+      height: 440px;
+      box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05),
+        inset -5px -5px -5px rgba(225, 225, 225, 0.05),
+        5px 5px 5px rgba(0, 0, 0, 0.05),
+        -5px -5px -5px rgba(225, 225, 225, 0.05);
+      border-radius: 15px;
+      margin: 30px;
+    }
+    .container-card .card .box {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      right: 20px;
+      bottom: 20p;
+      background: rgb(253, 253, 253);
+      box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.5s;
+    }
+    .container-card .card:hover .box{
+      transform: translateY(-50px);
+      box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.4);
+      background: linear-gradient(45deg,#b059d8,#5336b3);
+      
+    }
+    .container-card .card .box .content {
+      padding: 20px;
+      text-align: center;
+    }
+    .container-card .card .box .content h2{
+      position: absolute;
+      top: -10px;
+      right: 30px;
+      font-size: 8em;
+      color: rgba(0, 0, 0, 0.3);
+      transition: 0.5s;
+      pointer-events: none;
+    }
+    .container-card:hover .card .box .content h2{
+      color: rgba(0, 0, 0, 0.1);
+    }
+    .container-card .card .box .content h3{
+      font-size: 1.8em;
+      color: #777;
+      z-index: 1;
+      transition: 0.5s;
+    }
+    .container-card .card .box .content p{
+      font-size: 1em;
+      font-weight: 300;
+      color: #777;
+      z-index: 1;
+      transition: 0.5s;
+    }
+    .container-card:hover .card .box .content h3,
+    .container-card:hover .card .box .content p{
+      color: #fff;
+    }
+    .container-card .card .box .content a{
+      position: relative;
+      display: inline-block; 
+      padding: 8px 20px;
+      /* background: #1e242a; */
+      background: #394553;
+      margin-top: 15px;
+      border-radius: 20px;
+      color: rgb(243, 243, 243);
+      text-decoration: none;
+      font-weight: 400;
+      box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+    }
+    .container-card:hover .card .box .content a{
+      background: #c1d4e6;
+    }
+    h4{
+      /* text-decoration-color: linear-gradient(45deg,#b059d8,#5336b3); */
+      position: relative;
+      display: inline-block; 
+      padding: 5px 10px;
+      /* background: #1e242a; */
+      background: #394553;
+      margin-top: 15px;
+      border-radius: 20px;
+      color: rgb(243, 243, 243);
+      text-decoration: none;
+      font-weight: 400;
+      box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+    }
+    h4:hover{
+      background: linear-gradient(45deg,#16eefd,#e6ff01);
+    }
+  </style>
+  <body>
+    <header>
+      <div class="container">
+        <div class="main-head">
+          <h4>اشرف معايعه</h4>
+          <nav class="nav">
+            <ul>
+              <li class="home"><a href="#home"><h4>Home</h4></a></li>
+              <li class="projects"><a href="#projects"><h4>Projects</h4></a></li>
+              <li class="about"><a href="#about"><h4>About</h4></a></li>
+              <li class="contact"><a href="#contact"><h4>Contact</h4></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <section id="home">
+      <!-- <h1>Home</h1> -->
+      <div id="main">
+        <div id="box1"></div>
+        <div id="box2">
+          <div id="text">Ashraf Maayah<br /></div>
+        </div>
+        <div id="box4">
+          <div id="text2">Software Engineer</div>
+          <div id="text2">East Carolina Univercity</div>
+          <div id="text2">a.maayah21@gmail.com</div>
+          <div id="text2">Raleigh NC 27617</div>
+          <div id="text2">(252) 883 - 0270</div>
+        </div>
+      </div>
+    </section>
+    <!-- <h1>My Projects</h1> -->
+    <section id="projects">
+      <div class="container-card">
+        <div class="card">
+          <div class="box">
+            <div class="content">
+              <h2>01</h2>
+              <h3>Personal Website</h3>
+              <p></p>
+              <Website></Website>
+              <a href="#http://localhost:4200">read more</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="box">
+            <div class="content">
+              <h2>02</h2>
+              <h3>card2</h3>
+              <p>this is card two</p>
+              <a href="#">read more</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="box">
+            <div class="content">
+              <h2>03</h2>
+              <h3>card2</h3>
+              <p>this is card three</p>
+              <a href="#">read more</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="box">
+            <div class="content">
+              <h2>04</h2>
+              <h3>card2</h3>
+              <p>this is card four</p>
+              <a href="#">read more</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="box">
+            <div class="content">
+              <h2>05</h2>
+              <h3>card5</h3>
+              <p>this is card five</p>
+              <a href="#">read more</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="box">
+            <div class="content">
+              <h2>06</h2>
+              <h3>card6</h3>
+              <p>this is card six</p>
+              <a href="#">read more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      <h1>About</h1>
+    </section>
+    <section id="contact">
+      <h1>Contact</h1>
+    </section>
+  </body>
+</html>
